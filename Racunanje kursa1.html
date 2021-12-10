@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="style.css"  type="text/css">
+      <script>
+        var mode=0;
+       var aa ;
+       var Eur;
+       var Rsd;
+       
+       function HideStuff()
+       {
+        document.getElementById("valid").style.visibility = "hidden";
+        document.getElementById("valid2").style.visibility = "hidden";
+       }
+       function ValidatetbRsd()
+       {
+        Rsd = parseInt( document.getElementById("tbRsd").value)
+        if(Rsd*0!=0)
+        {
+          document.getElementById("valid").style.visibility ="visible";
+          alert("Ovo je ne valjano")
+        }
+        if(Rsd*0==0)
+        {
+          document.getElementById("valid").style.visibility = "hidden";
+          alert("vajaaaa")
+          Rsd = parseInt( document.getElementById("tbRsd").value)
+         Eur = 117,12
+         var Resault = (Rsd/Eur)
+         document.getElementById("lblRezultat").innerHTML=Resault
+         document.getElementById("tbEur").value=Resault
+         alert(Resault)
+        }
+       }
+       function ValidatetbEur()
+       {
+        Eur = parseInt( document.getElementById("tbEur").value)
+        if(Eur*0!=0)
+        {
+          document.getElementById("valid2").style.visibility ="visible";
+          alert("Ovo je ne valjano")
+        }
+        if(Eur*0==0)
+        {
+          document.getElementById("valid2").style.visibility = "hidden";
+          alert("vajaaaa")
+          Eur = parseInt( document.getElementById("tbEur").value)
+         Rsd = 117,12
+         var Resault = (Eur*Rsd)
+         document.getElementById("lblRezultat").innerHTML=Resault
+         document.getElementById("tbRsd").value=Resault
+         alert(Resault)
+        }
+       }
+
+      
+       function add1toMode()
+       {
+         mode++;
+         
+         if(mode%2==0)
+         {
+          alert("Eur")
+          document.getElementById("lblValuta").innerHTML="Eur:"
+          document.getElementById("Slika").src=" Eurimg.png"
+         
+          
+         }
+         if(mode%2!=0)
+         {
+          alert("Rsd")
+          document.getElementById("lblValuta").innerHTML="Rsd:"
+          document.getElementById("Slika").src="Rsdimg.jpg  "
+         
+         }
+         
+       }
+       
+       function CalculateRsd()
+       {
+        ValidatetbRsd()
+        
+       }
+       function CalculateEur()
+       {
+        ValidatetbEur()
+        
+       }
+       function Calculate()
+       {
+         if(mode%2==0)
+         {
+           CalculateRsd();
+          
+         }
+         else
+         {
+           CalculateEur();
+           
+           
+           
+         }
+       }
+      function opop()
+      {
+        document.getElementById("lblValuta").innerHTML="Penis"
+      }
+   </script>
+   
+    
+     
+</head>
+<body  onload="HideStuff()">
+  
+       <div>
+         <form>
+           <div class="Margine">
+             <input type="text" id="tbRsd">
+             <label>RSD</label>
+           <label id="valid" class="CStar" >*</label>
+
+           </div>
+           <div>
+             <img src="Eurimg.png" class="Is" onclick="add1toMode()" id="Slika">
+             <label id="lblValuta">Eur:</label>
+             <label id="lblRezultat">Izracunati kurs</label>
+           </div>
+           <div class="Margine">
+            <input type="text" id="tbEur">
+            <label>EUR</label>
+            <label id="valid2" class="CStar">*</label>
+          </div>
+          <div class="Margine">
+            <input type="button" value="Convert" onclick="Calculate()">
+            <input type="reset">
+          </div>
+         </form>
+       </div>
+       <button onclick=" opop()">Ckick</button>
+
+       <div>
+        <!--
+          <iframe src="https://www.pornhub.com/embed/ph5fe7820b06c8c" frameborder="0" width="560" height="315" scrolling="no" allowfullscreen></iframe>
+        -->
+       </div>
+      
+      
+    
+    
+   
+</body>
+</html>
